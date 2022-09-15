@@ -8,7 +8,9 @@ class GamesRemoteRepositoryImpl implements GamesRemoteRepository {
   GamesRemoteRepositoryImpl(this.datasource);
 
   @override
-  Future<List<Games>> getGames({required int idPlatform,}) {
+  Future<List<Games>> getGames({
+    required int idPlatform,
+  }) {
     return datasource.getGames(idPlatform: idPlatform);
   }
 }

@@ -4,7 +4,6 @@ import 'package:game_lovers/src/features/games/infra/datasource/genres_local_dat
 import 'package:game_lovers/src/storage/database.dart';
 
 class GenreLocalDatasourceImpl implements GenreLocalDatasource {
-
   @override
   Future<List<Genre>> getGenreLocal({
     required int idGame,
@@ -20,9 +19,8 @@ class GenreLocalDatasourceImpl implements GenreLocalDatasource {
       }
 
       return genres;
-    } catch (e){
+    } catch (e) {
       return <Genre>[];
     }
   }
-
 }

@@ -3,7 +3,7 @@ import 'package:game_lovers/src/features/games/domain/repository/genres_local_re
 import 'package:game_lovers/src/features/games/infra/datasource/genres_local_datasource.dart';
 
 class GenreLocalRepositoryImpl implements GenreLocalRepository {
-  const GenreLocalRepositoryImpl(this.datasource) ;
+  const GenreLocalRepositoryImpl(this.datasource);
 
   final GenreLocalDatasource datasource;
 
@@ -11,7 +11,6 @@ class GenreLocalRepositoryImpl implements GenreLocalRepository {
   Future<List<Genre>> getGenreLocal({
     required int idGame,
   }) {
-    return datasource.getGenreLocal(idGame: idGame
-    );
+    return datasource.getGenreLocal(idGame: idGame);
   }
 }

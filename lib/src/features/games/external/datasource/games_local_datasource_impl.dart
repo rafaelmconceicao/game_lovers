@@ -6,7 +6,6 @@ import 'package:game_lovers/src/storage/database.dart';
 import 'package:sqflite/sqflite.dart';
 
 class GamesLocalDatasourceImpl implements GamesLocalDatasource {
-
   @override
   Future<List<Games>> getGamesLocal({
     required int idPlatform,
@@ -34,16 +33,14 @@ class GamesLocalDatasourceImpl implements GamesLocalDatasource {
       }
 
       return gamesComplete;
-    } catch (e){
+    } catch (e) {
       return <Games>[];
     }
   }
 
   @override
   Future<void> updateGamesLocal(
-      {required List<Games> games,
-        required int idPlatform}) async {
-
+      {required List<Games> games, required int idPlatform}) async {
     var db = await DatabaseHelper().openConnection();
     var batch = db.batch();
 
@@ -59,5 +56,4 @@ class GamesLocalDatasourceImpl implements GamesLocalDatasource {
     }
     batch.commit();
   }
-
 }

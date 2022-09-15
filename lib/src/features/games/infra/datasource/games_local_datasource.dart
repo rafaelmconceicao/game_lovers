@@ -9,5 +9,4 @@ abstract class GamesLocalDatasource {
     required List<Games> games,
     required int idPlatform,
   });
-
 }

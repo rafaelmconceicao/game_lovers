@@ -1,7 +1,7 @@
 # Aplicativo Game Lovers
 Projeto destinado para estudo 
 
-<h2>📱 Screenshots</h2>
+<h2>Screenshots</h2>
 
    <p align="center">
       <img src="assets/screenshots/home.jpeg" width="400" alt="Game App Demonstração Home">

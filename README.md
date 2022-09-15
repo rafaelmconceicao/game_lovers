@@ -1,2 +1,2 @@
-# game_lovers
+# Aplicativo Game Lovers
 Projeto destinado para estudo 

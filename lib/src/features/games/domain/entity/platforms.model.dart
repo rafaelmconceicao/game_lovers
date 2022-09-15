@@ -6,14 +6,14 @@ class Platforms {
   String? name;
   int? platformLogo;
 
-  Platforms(
-      {this.id,
-        this.alternativeName,
-        this.category,
-        this.createdAt,
-        this.name,
-        this.platformLogo,
-      });
+  Platforms({
+    this.id,
+    this.alternativeName,
+    this.category,
+    this.createdAt,
+    this.name,
+    this.platformLogo,
+  });
 
   Platforms.fromJson(Map<String, dynamic> json) {
     id = json['id'];

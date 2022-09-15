@@ -29,7 +29,7 @@ class CategoryTabBar extends StatelessWidget with PreferredSizeWidget {
         unselectedLabelStyle: GLTextStyles.tabDisabled,
         indicator: BoxDecoration(
             borderRadius: BorderRadius.circular(8.0),
-            color:  GLColors.royalGreen),
+            color: GLColors.royalGreen),
         tabs: const [
           CategoryItem('Nintendo'),
           CategoryItem('Windows'),

@@ -4,11 +4,13 @@ import 'package:game_lovers/src/features/games/domain/repository/games_remote_re
 class GamesRemoteUsecase {
   const GamesRemoteUsecase({
     required this.repository,
-  }) ;
+  });
 
   final GamesRemoteRepository repository;
 
-  Future<List<Games>> getGames({required int idPlatform,}) async {
+  Future<List<Games>> getGames({
+    required int idPlatform,
+  }) async {
     return await repository.getGames(idPlatform: idPlatform);
   }
 }

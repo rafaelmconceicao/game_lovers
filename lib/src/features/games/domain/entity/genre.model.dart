@@ -3,11 +3,7 @@ class Genre {
   String? name;
   int? game;
 
-  Genre({
-    this.id,
-    this.name,
-    this.game
-  });
+  Genre({this.id, this.name, this.game});
 
   Genre.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -15,7 +11,6 @@ class Genre {
   }
 
   factory Genre.fromJSON(Map<dynamic, dynamic> map) {
-
     Genre genre = Genre(
       id: map['id']?.toInt() ?? 0,
       name: map['name'] ?? '',

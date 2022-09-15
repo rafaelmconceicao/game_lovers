@@ -11,16 +11,16 @@ class Games {
   String? summary;
   int? platform;
 
-  Games(
-      {this.id,
-        this.category,
-        this.genres,
-        this.name,
-        this.platforms,
-        this.screenshots,
-        this.summary,
-        this.platform,
-      });
+  Games({
+    this.id,
+    this.category,
+    this.genres,
+    this.name,
+    this.platforms,
+    this.screenshots,
+    this.summary,
+    this.platform,
+  });
 
   Games.fromJson(Map<String, dynamic> json) {
     String getScreenshots(List<dynamic> images) => images.first['url'];
@@ -30,22 +30,23 @@ class Games {
 
     if (json['genres'] != null) {
       genres = [];
-      genres = (json['genres'] as List).map((e) =>
-          Genre.fromJson(e)).toList();
+      genres = (json['genres'] as List).map((e) => Genre.fromJson(e)).toList();
     }
 
     name = json['name'];
 
     if (json['platforms'] != null) {
       platforms = [];
-      platforms = (json['platforms'] as List).map((e) =>
-          Platforms.fromJson(e)).toList();
+      platforms = (json['platforms'] as List)
+          .map((e) => Platforms.fromJson(e))
+          .toList();
     }
 
-    screenshots = json['screenshots'] != null ? getScreenshots(json['screenshots']) : null;
+    screenshots = json['screenshots'] != null
+        ? getScreenshots(json['screenshots'])
+        : null;
     summary = json['summary'];
     platform = platforms?.first.id;
-
   }
 
   factory Games.fromJSON(Map<dynamic, dynamic> map) {
@@ -54,10 +55,8 @@ class Games {
         name: map['name'] ?? '',
         screenshots: map['screenshots'],
         summary: map['summary'],
-        platform: map['platform']
-    );
+        platform: map['platform']);
   }
-
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};

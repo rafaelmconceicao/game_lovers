@@ -6,25 +6,27 @@ class GamesLocalUsecase {
   const GamesLocalUsecase({
     required this.repositoryLocal,
     required this.repositoryRemote,
-  }) ;
+  });
 
   final GamesLocalRepository repositoryLocal;
   final GamesRemoteRepository repositoryRemote;
 
-  Future<List<Games>> getGamesLocal({required int idPlatform,}) async {
+  Future<List<Games>> getGamesLocal({
+    required int idPlatform,
+  }) async {
     await updateGamesLocal(idPlatform: idPlatform);
     return repositoryLocal.getGamesLocal(idPlatform: idPlatform);
   }
 
   Future<void> updateGamesLocal({
-    required int idPlatform,}) async {
-
+    required int idPlatform,
+  }) async {
     await repositoryRemote.getGames(idPlatform: idPlatform).then((value) {
-      repositoryLocal.updateGamesLocal(games: value, idPlatform: idPlatform).then((value) {
+      repositoryLocal
+          .updateGamesLocal(games: value, idPlatform: idPlatform)
+          .then((value) {
         return value;
       });
     });
   }
-
-
 }

@@ -4,16 +4,15 @@ import 'package:game_lovers/src/features/games/presentation/bloc/home_state.dart
 import 'package:rxdart/rxdart.dart';
 
 class HomeBloc with SubscriptionHolder {
-  HomeBloc({
-    required this.usecase,
-    required this.types
-  }) {
+  HomeBloc({required this.usecase, required this.types}) {
     Rx.merge([
       _getMoviesData(),
       _onRefreshDataSubject.flatMap((_) => _refreshData()),
-    ]).listen(
-      _onNewStateSubject.add,
-    ).addTo(subscriptions);
+    ])
+        .listen(
+          _onNewStateSubject.add,
+        )
+        .addTo(subscriptions);
   }
 
   final GamesLocalUsecase usecase;
@@ -46,7 +45,6 @@ class HomeBloc with SubscriptionHolder {
   Stream<HomeState> _fetchInfos() async* {
     yield Loading();
     try {
-
       final games = await usecase.getGamesLocal(
         idPlatform: TypeExtension(types).idPlatform,
       );

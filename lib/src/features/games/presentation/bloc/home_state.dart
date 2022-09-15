@@ -5,7 +5,6 @@ abstract class HomeState {}
 class Success implements HomeState {
   const Success({
     required this.games,
-
   });
 
   final List<Games> games;
@@ -14,7 +13,6 @@ class Success implements HomeState {
 class Loading implements HomeState {}
 
 class Error implements HomeState {}
-
 
 extension TypeExtension on Types {
   int get idPlatform {
